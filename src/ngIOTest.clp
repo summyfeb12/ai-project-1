@@ -1,16 +1,52 @@
+(printout t "Are your processes well established? y/n" crlf)
 (bind ?x (read t))
-
-(if (eq (lowcase ?x) "yes") then (assert (bro-team)))
-
-(defrule broTeam
-(bro-team) 
-=> (printout t "team of bros"))
-
-(run)
-
-(printout t "Are your process well established? y/n" crlf)
-(bind ?x (read t))
-(if(eq ( lowcase ?x) "y" ) then printout( "Are your process self regenerating?" ))
-(if(eq ( lowcase ?x) "n" ) then printout( "Are your processes defined and document?" ))
+(if(eq ( lowcase ?x) "y" ) then (printout t "Are your processes self regenerating?" crlf))
+(if(eq ( lowcase ?x) "n" ) then (printout t "Are your processes defined and documented?" crlf))
 (bind ?y (read t))
-(if(eq ( lowcase ?x) "y" AND ( lowcase ?y ) "y" ) than printout("Are your operating procedures stabilizing?" ))
+(if(eq ( lowcase ?x) "y" AND ( lowcase ?y ) "y" ) then (assert( process AT-LEAST self-regenerating)))
+(if(eq ( lowcase ?x) "y" AND ( lowcase ?y ) "n" ) then (assert( process AT-LEAST well-established)))
+(if(eq ( lowcase ?x) "n" AND ( lowcase ?y ) "y" ) then (assert( process AT-LEAST defined-and-documented)))
+(if(eq ( lowcase ?x) "n" AND ( lowcase ?y ) "n" ) then (assert( process AT-LEAST evolving)))
+
+(printout t "Are your operating procedures institutionalized? y/n" crlf)
+(bind ?x (read t))
+(if(eq ( lowcase ?x) "y" ) then (printout t "Are your operating procedures self adjusting?" crlf))
+(if(eq ( lowcase ?x) "n" ) then (printout t "Are your operating procedures stabilizing?" crlf))
+(bind ?y (read t))
+(if(eq ( lowcase ?x) "y" AND ( lowcase ?y ) "y" ) then (assert( process AT-LEAST self-adjusting)))
+(if(eq ( lowcase ?x) "y" AND ( lowcase ?y ) "n" ) then (assert( process AT-LEAST institutionalized)))
+(if(eq ( lowcase ?x) "n" AND ( lowcase ?y ) "y" ) then (assert( process AT-LEAST stabilizing)))
+(if(eq ( lowcase ?x) "n" AND ( lowcase ?y ) "n" ) then (assert( process AT-LEAST being-defined)))
+
+(printout t "Is your data available? y/n" crlf)
+(bind ?x (read t))
+(if(eq ( lowcase ?x) "y" ) then (printout t "Is your data in standard repository?" crlf))
+(if(eq ( lowcase ?x) "n" ) then (printout t "Can your data be collected?" crlf))
+(bind ?y (read t))
+(if(eq ( lowcase ?x) "y" AND ( lowcase ?y ) "y" ) then (assert( process AT-LEAST in-standard-repository)))
+(if(eq ( lowcase ?x) "y" AND ( lowcase ?y ) "n" ) then (assert( process AT-LEAST available)))
+(if(eq ( lowcase ?x) "n" AND ( lowcase ?y ) "y" ) then (assert( process AT-LEAST can-be-collected)))
+(if(eq ( lowcase ?x) "n" AND ( lowcase ?y ) "n" ) then (assert( process AT-LEAST non-existent)))
+
+(printout t "Is your data collection difficulty low? y/n" crlf)
+(bind ?x (read t))
+(if(eq ( lowcase ?x) "y" ) then (printout t "Is your data collection integral to business processes?" crlf))
+(if(eq ( lowcase ?x) "n" ) then (printout t "IS your data collection of medium difficulty?" crlf))
+(bind ?y (read t))
+(if(eq ( lowcase ?x) "y" AND ( lowcase ?y ) "y" ) then (assert( process AT-LEAST integral-to-business-processes)))
+(if(eq ( lowcase ?x) "y" AND ( lowcase ?y ) "n" ) then (assert( process AT-LEAST low)))
+(if(eq ( lowcase ?x) "n" AND ( lowcase ?y ) "y" ) then (assert( process AT-LEAST medium)))
+(if(eq ( lowcase ?x) "n" AND ( lowcase ?y ) "n" ) then (assert( process AT-LEAST high)))
+
+(printout t "Is your data collection automation high? y/n" crlf)
+(bind ?x (read t))
+(if(eq ( lowcase ?x) "y" ) then (printout t "Is your data collection collection full?" crlf))
+(if(eq ( lowcase ?x) "n" ) then (printout t "IS your data collection automation medium?" crlf))
+(bind ?y (read t))
+(if(eq ( lowcase ?x) "y" AND ( lowcase ?y ) "y" ) then (assert( process AT-LEAST full)))
+(if(eq ( lowcase ?x) "y" AND ( lowcase ?y ) "n" ) then (assert( process AT-LEAST high)))
+(if(eq ( lowcase ?x) "n" AND ( lowcase ?y ) "y" ) then (assert( process AT-LEAST medium)))
+(if(eq ( lowcase ?x) "n" AND ( lowcase ?y ) "n" ) then (assert( process AT-LEAST low)))
+
+
+
