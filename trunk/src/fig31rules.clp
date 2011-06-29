@@ -1,3 +1,9 @@
+(printout t "Do you have operating procedures?" crlf)
+(printout t "?" crlf)
+(bind ?operating-procedures (read t))
+(printout t ?operating-procedures )
+
+
 (defrule stage1
 (processes AT-LEAST evolving)
 (not (or (program stage2) (program stage3) (program stage4)))
