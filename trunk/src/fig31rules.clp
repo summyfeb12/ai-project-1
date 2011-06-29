@@ -1,20 +1,10 @@
-(defrule stage1
-(processes AT-LEAST evolving)
-(operating-procedures AT-LEAST being-defined)
-(data-availability AT-LEAST non-existent)
-(collection-difficulty AT-LEAST high)
-(collection-automation AT-LEAST low)
-(not (or (program stage2) (program stage3) (program stage4)))
-=> (assert (program stage1)))
-
-(defrule stage2
-(processes AT-LEAST defined-and-documented)
-(operating-procedures AT-LEAST stabilizing)
-(data-availability AT-LEAST can-be-collected)
-(collection-difficulty AT-LEAST medium)
-(collection-automation AT-LEAST medium)
-(not (or (program stage3) (program stage4)))
-=> (assert (program stage2)))
+(defrule stage4
+(processes AT-LEAST self-regenerating)
+(operating-procedures AT-LEAST self-adjusting)
+(data-availability AT-LEAST in-standard-repository)
+(collection-difficulty AT-LEAST integral)
+(collection-automation AT-LEAST full)
+=> (assert (program stage4)))
 
 (defrule stage3
 (processes AT-LEAST well-established)
@@ -25,13 +15,23 @@
 (not (program stage4))
 => (assert (program stage3)))
 
-(defrule stage4
-(processes AT-LEAST self-regenerating)
-(operating-procedures AT-LEAST self-adjusting)
-(data-availability AT-LEAST in-standard-repository)
-(collection-difficulty AT-LEAST integral)
-(collection-automation AT-LEAST full)
-=> (assert (program stage4)))
+(defrule stage2
+(processes AT-LEAST defined-and-documented)
+(operating-procedures AT-LEAST stabilizing)
+(data-availability AT-LEAST can-be-collected)
+(collection-difficulty AT-LEAST medium)
+(collection-automation AT-LEAST medium)
+(not (or (program stage3) (program stage4)))
+=> (assert (program stage2)))
+
+(defrule stage1
+(processes AT-LEAST evolving)
+(operating-procedures AT-LEAST being-defined)
+(data-availability AT-LEAST non-existent)
+(collection-difficulty AT-LEAST high)
+(collection-automation AT-LEAST low)
+(not (or (program stage2) (program stage3) (program stage4)))
+=> (assert (program stage1)))
 
 (defrule proc1 (processes AT-LEAST self-regenerating)      => (assert (processes AT-LEAST well-established)))
 (defrule proc2 (processes AT-LEAST well-established)       => (assert (processes AT-LEAST defined-and-documented)))
