@@ -88,10 +88,10 @@
 => (printout t ?stage3msg6 crlf))
 
 ;;; Tests
-;; Test 1
+;; Test 1, should print all stage 3 messages
 ; (assert (program stage3))
 ; (run)
-;; Test 2
+;; Test 2, should print all stage 1 messages but one
 ; (assert (program stage1))
 ; (assert (collection-automation AT-LEAST medium))
 ; (run)
