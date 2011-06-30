@@ -20,3 +20,8 @@
 (bind ?stage1msg4 "Data needs to be available in order to implement measures.  Looks for means of collecting data for your company.")
 (bind ?stage1msg5 "Try to make it easier to collect data, this is an easy way to save money.")
 (bind ?stage1msg6 "Try to automate your data collection as much as possible.  This reduces the human resources required and chance of human error.")
+
+;;; Tests
+;; Test 1, prints messages with newlines
+; (printout t ?stage1msg1 crlf)
+; (printout t ?stage3msg3 crlf)

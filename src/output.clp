@@ -86,3 +86,12 @@
 (first-printed)
 (and (program stage3) (not (collection-automation AT-LEAST full)))
 => (printout t ?stage3msg6 crlf))
+
+;;; Tests
+;; Test 1
+; (assert (program stage3))
+; (run)
+;; Test 2
+; (assert (program stage1))
+; (assert (collection-automation AT-LEAST medium))
+; (run)
