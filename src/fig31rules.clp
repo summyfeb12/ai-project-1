@@ -41,7 +41,6 @@
 (defrule op2 (operating-procedures AT-LEAST institutionalized) => (assert (operating-procedures AT-LEAST stabilizing)))
 (defrule op3 (operating-procedures AT-LEAST stabilizing)       => (assert (operating-procedures AT-LEAST being-defined)))
 
-
 (defrule da1 (data-availability AT-LEAST in-standard-repository) => (assert (data-availability AT-LEAST available)))
 (defrule da2 (data-availability AT-LEAST available)              => (assert (data-availability AT-LEAST can-be-collected)))
 (defrule da3 (data-availability AT-LEAST can-be-collected)       => (assert (data-availability AT-LEAST non-existent))) 
