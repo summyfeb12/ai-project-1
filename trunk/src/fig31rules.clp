@@ -52,3 +52,18 @@
 (defrule ca1 (collection-automation AT-LEAST full)   => (assert (collection-automation AT-LEAST high)))
 (defrule ca2 (collection-automation AT-LEAST high)   => (assert (collection-automation AT-LEAST medium)))
 (defrule ca3 (collection-automation AT-LEAST medium) => (assert (collection-automation AT-LEAST low)))
+
+;;; Tests
+;; Test 1, should fire rules proc1, proc2, proc3
+; (watch all)
+; (assert (processes AT-LEAST self-regenerating))
+; (run)
+
+;; Test 2, should fire rule stage2 (and others)
+; (watch all)
+; (assert (collection-automation AT-LEAST high))
+; (assert (collection-difficulty AT-LEAST medium))
+; (assert (operating-procedures AT-LEAST stabilizing))
+; (assert (processes AT-LEAST well-established))
+; (assert (data-availability AT-LEAST available))
+; (run)

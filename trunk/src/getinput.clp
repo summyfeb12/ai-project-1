@@ -30,7 +30,7 @@
 
 (printout t "Is the collection of data difficult? y/n" crlf)
 (bind ?x (read t))
-(if (eq (lowcase ?x) "y") then (printout t "Is your data collection of high difficulty?" crlf))
+(if (eq (lowcase ?x) "y") then (printout t "Is collecting data VERY difficult?" crlf))
 (if (eq (lowcase ?x) "n") then (printout t "Is your data collection integral to business processes?" crlf))
 (bind ?y (read t))
 (if (and (eq (lowcase ?x) "y") (eq (lowcase ?y) "y")) then (assert (collection-difficulty AT-LEAST high)))
@@ -49,4 +49,10 @@
 (if (and (eq (lowcase ?x) "n") (eq (lowcase ?y) "n")) then (assert (collection-automation AT-LEAST medium)))
 
 
-
+;;; Tests
+; Testing this module requires either piping a file in as the console input, or entering the values manually.
+; Regardless of the method chosen, test the following values:
+; Test 1: y y y y y y y y y y
+; Test 2: y n y y y y y y y y
+; Test 3: y n y n n n n y y y
+; Test 4: n n n n n n y y n n
