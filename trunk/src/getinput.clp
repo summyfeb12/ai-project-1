@@ -18,7 +18,7 @@ else (printout t "Please enter 'y' or 'n'.  You will need to restart the program
 (bind ?y (read t))
 (if (and (eq (lowcase ?x) "y") (eq (lowcase ?y) "y")) then (assert (operating-procedures AT-LEAST self-adjusting))
 else (if (and (eq (lowcase ?x) "y") (eq (lowcase ?y) "n")) then (assert (operating-procedures AT-LEAST institutionalized))
-else (if (nd (eq (lowcase ?x) "n") (eq (lowcase ?y) "y")) then (assert (operating-procedures AT-LEAST stabilizing))
+else (if (and (eq (lowcase ?x) "n") (eq (lowcase ?y) "y")) then (assert (operating-procedures AT-LEAST stabilizing))
 else (if (and (eq (lowcase ?x) "n") (eq (lowcase ?y) "n")) then (assert (operating-procedures AT-LEAST being-defined))
 else (printout t "Please enter 'y' or 'n'.  You will need to restart the program.") (exit)))))
 
